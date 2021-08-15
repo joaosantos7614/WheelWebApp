@@ -1,0 +1,30 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Car Tire Diameter Calculator</h2>
+    <br />
+    <img src="~/images/Tire.jpg" class="img-fluid2" alt="Responsive image">
+    <br />
+    <h2>Code on your tire:</h2>
+    <form method="post">
+        <!--form starts here-->
+        <input type="text" asp-for="Wheel.Width" size="3" placeholder="255" required pattern="[0-9]{2,3}">
+        <label for="profile">/</label>
+        <input type="text" asp-for="Wheel.Ratio" size="2" placeholder="55" required pattern="[0-9]{2,2}">
+        <label for="lname">R</label>
+        <input type="text" asp-for="Wheel.Rim" size="2" placeholder="18" required pattern="[0-9]{2,2}">
+        <h5>(for example: 255/55R18)</h5>
+
+        <button class="btn btn-success" style="width:150px;height:40px;font-size:20px;" type="submit">Go! </button>
+    </form>                 <!--form ends here-->
+    <br />
+    @if (Model.Wheel != null)
+    {
+        <h2> The outer diameter of your tire is @Model.Wheel.Diam() mm </h2>
+    }
+
+</div>
