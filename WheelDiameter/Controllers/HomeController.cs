@@ -21,8 +21,6 @@ namespace WheelDiameter.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            //WheelModel wheel = new();
-            //return View(wheel);
             return View();
         }
 
@@ -32,7 +30,7 @@ namespace WheelDiameter.Controllers
             return View(wheel);
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }
